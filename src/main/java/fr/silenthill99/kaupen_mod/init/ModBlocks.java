@@ -8,15 +8,11 @@ import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipeType;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import javax.annotation.Nullable;
-import javax.tools.Tool;
 import java.util.function.Supplier;
 
 public class ModBlocks {
@@ -65,6 +61,21 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> OATS = BLOCKS.register("oats_crops",
             () -> new OatsBlock(AbstractBlock.Properties.copy(Blocks.WHEAT)));
+
+    public static final RegistryObject<Block> REDWOOD_LOG = createBlock("redwood_log",
+            () -> new RotatedPillarBlock(AbstractBlock.Properties.copy(Blocks.OAK_LOG)));
+
+    public static final RegistryObject<Block> REDWOOD_WOOD = createBlock("redwood_wood",
+            () -> new RotatedPillarBlock(AbstractBlock.Properties.copy(Blocks.OAK_WOOD)));
+
+    public static final RegistryObject<Block> STRIPPED_REDWOOD_LOG = createBlock("stripped_redwood_log",
+            () -> new RotatedPillarBlock(AbstractBlock.Properties.copy(Blocks.STRIPPED_OAK_LOG)));
+
+    public static final RegistryObject<Block> STRIPPED_REDWOOD_WOOD = createBlock("stripped_redwood_wood",
+            () -> new RotatedPillarBlock(AbstractBlock.Properties.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final RegistryObject<Block> REDWOOD_PLANKS = createBlock("redwood_planks",
+            () -> new Block(AbstractBlock.Properties.copy(Blocks.OAK_PLANKS)));
 
 
     private static <T extends Block> RegistryObject<T> createBlock(String name, Supplier<T> supplier) {

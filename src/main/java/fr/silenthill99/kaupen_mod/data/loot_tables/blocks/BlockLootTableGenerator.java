@@ -4,7 +4,6 @@ import fr.silenthill99.kaupen_mod.init.ModBlocks;
 import fr.silenthill99.kaupen_mod.init.ModItems;
 import net.minecraft.advancements.criterion.StatePropertiesPredicate;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.CropsBlock;
 import net.minecraft.data.loot.BlockLootTables;
 import net.minecraft.loot.conditions.BlockStateProperty;
@@ -26,13 +25,20 @@ public class BlockLootTableGenerator extends BlockLootTables {
         dropSelf(ModBlocks.AMETHYST_BUTTON.get());
         dropSelf(ModBlocks.AMETHYST_PRESSURE_PLATE.get());
         dropSelf(ModBlocks.AMETHYST_TRAPDOOR.get());
-        add(ModBlocks.AMETHYST_DOOR.get(), block -> createDoorTable(block));
+        add(ModBlocks.AMETHYST_DOOR.get(), BlockLootTables::createDoorTable);
 
         ILootCondition.IBuilder ilootcondition$ibuilder1 = BlockStateProperty
                 .hasBlockStateProperties(ModBlocks.OATS.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CropsBlock.AGE, 7));
 
-        add(ModBlocks.OATS.get(), block -> createCropDrops(block, ModItems.OATS.get(), ModItems.OATS.get(), ilootcondition$ibuilder1));
+        add(ModBlocks.OATS.get(), block -> createCropDrops(block, ModItems.OATS.get(), ModItems.OATS.get(),
+                ilootcondition$ibuilder1));
+
+        dropSelf(ModBlocks.REDWOOD_LOG.get());
+        dropSelf(ModBlocks.REDWOOD_WOOD.get());
+        dropSelf(ModBlocks.STRIPPED_REDWOOD_LOG.get());
+        dropSelf(ModBlocks.STRIPPED_REDWOOD_WOOD.get());
+        dropSelf(ModBlocks.REDWOOD_PLANKS.get());
     }
 
     @Override

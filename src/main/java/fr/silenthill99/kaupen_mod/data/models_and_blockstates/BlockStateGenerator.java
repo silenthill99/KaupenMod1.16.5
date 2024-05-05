@@ -35,6 +35,13 @@ public class BlockStateGenerator extends BlockStateProvider {
                 modLoc("block/" + ModBlocks.AMETHYST_DOOR.getId().getPath() + "_top"));
         trapdoorBlock((TrapDoorBlock) ModBlocks.AMETHYST_TRAPDOOR.get(),
                 blockTexture(ModBlocks.AMETHYST_TRAPDOOR.get()), true);
+        logBlock((RotatedPillarBlock) ModBlocks.REDWOOD_LOG.get());
+        axisBlock((RotatedPillarBlock) ModBlocks.REDWOOD_WOOD.get(), blockTexture(ModBlocks.REDWOOD_LOG.get()),
+                blockTexture(ModBlocks.REDWOOD_LOG.get()));
+        logBlock((RotatedPillarBlock) ModBlocks.STRIPPED_REDWOOD_LOG.get());
+        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_REDWOOD_WOOD.get(),
+                blockTexture(ModBlocks.STRIPPED_REDWOOD_LOG.get()), blockTexture(ModBlocks.STRIPPED_REDWOOD_LOG.get()));
+        simpleBlock(ModBlocks.REDWOOD_PLANKS.get());
     }
 
     @Override
@@ -86,5 +93,19 @@ public class BlockStateGenerator extends BlockStateProvider {
         path = block.getRegistryName().getPath();
         super.trapdoorBlock(block, texture, orientable);
         simpleBlockItem(block, models().trapdoorBottom(path + "_bottom", modLoc("block/" + path)));
+    }
+
+    @Override
+    public void axisBlock(RotatedPillarBlock block, ResourceLocation side, ResourceLocation end) {
+        path = block.getRegistryName().getPath();
+        super.axisBlock(block, side, end);
+        simpleBlockItem(block, new ModelFile.UncheckedModelFile(modLoc("block/" + path)));
+    }
+
+    @Override
+    public void logBlock(RotatedPillarBlock block) {
+        path = block.getRegistryName().getPath();
+        super.logBlock(block);
+        simpleBlockItem(block, new ModelFile.UncheckedModelFile(modLoc("block/" + path)));
     }
 }

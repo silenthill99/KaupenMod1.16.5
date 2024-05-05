@@ -1,12 +1,13 @@
 package fr.silenthill99.kaupen_mod;
 
+import com.google.common.collect.ImmutableMap;
 import fr.silenthill99.kaupen_mod.init.ModBlocks;
 import fr.silenthill99.kaupen_mod.init.ModItems;
+import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.RenderTypeBuffers;
 import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraft.item.AxeItem;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -25,7 +26,13 @@ public class Main {
     }
 
     private void setup(FMLCommonSetupEvent event) {
+        event.enqueueWork(() -> {
+            AxeItem.STRIPABLES = new ImmutableMap.Builder<Block, Block>().putAll(AxeItem.STRIPABLES)
+                    .put(ModBlocks.REDWOOD_LOG.get(), ModBlocks.STRIPPED_REDWOOD_LOG.get())
+                    .put(ModBlocks.REDWOOD_WOOD.get(), ModBlocks.STRIPPED_REDWOOD_WOOD.get())
+                    .build();
 
+        });
     }
 
     private void clientSetup(FMLClientSetupEvent event) {
