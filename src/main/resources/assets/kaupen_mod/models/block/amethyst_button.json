@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "kaupen_mod:block/amethyst_block"
+  }
+}

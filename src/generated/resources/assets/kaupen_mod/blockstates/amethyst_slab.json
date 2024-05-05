@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "kaupen_mod:block/amethyst_slab_top"
+    },
+    "type=bottom": {
+      "model": "kaupen_mod:block/amethyst_slab"
+    },
+    "type=double": {
+      "model": "kaupen_mod:block/amethyst_block"
+    }
+  }
+}

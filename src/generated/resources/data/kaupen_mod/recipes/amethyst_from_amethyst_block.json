@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "kaupen_mod:amethyst_block"
+    }
+  ],
+  "result": {
+    "item": "kaupen_mod:amethyst",
+    "count": 9
+  }
+}

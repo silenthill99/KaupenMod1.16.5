@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "kaupen_mod:item/amethyst_hoe"
+  }
+}

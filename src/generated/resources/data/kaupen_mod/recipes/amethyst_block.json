@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "000",
+    "000",
+    "000"
+  ],
+  "key": {
+    "0": {
+      "item": "kaupen_mod:amethyst"
+    }
+  },
+  "result": {
+    "item": "kaupen_mod:amethyst_block"
+  }
+}
