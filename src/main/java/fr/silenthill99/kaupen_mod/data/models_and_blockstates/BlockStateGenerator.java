@@ -42,6 +42,7 @@ public class BlockStateGenerator extends BlockStateProvider {
         axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_REDWOOD_WOOD.get(),
                 blockTexture(ModBlocks.STRIPPED_REDWOOD_LOG.get()), blockTexture(ModBlocks.STRIPPED_REDWOOD_LOG.get()));
         simpleBlock(ModBlocks.REDWOOD_PLANKS.get());
+        simpleBlock(ModBlocks.REDWOOD_LEAVES.get());
     }
 
     @Override

@@ -4,6 +4,7 @@ import fr.silenthill99.kaupen_mod.Main;
 import fr.silenthill99.kaupen_mod.init.ModBlocks;
 import fr.silenthill99.kaupen_mod.init.ModItems;
 import net.minecraft.block.DoorBlock;
+import net.minecraft.block.SaplingBlock;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
@@ -29,6 +30,7 @@ public class ItemModelGenerator extends ItemModelProvider {
         simpleItem(ModItems.AMETHYST_HELMET.get());
         doorBlockItem((DoorBlock) ModBlocks.AMETHYST_DOOR.get());
         simpleItem(ModItems.OATS.get());
+        saplingBlockItem((SaplingBlock) ModBlocks.REDWOOD_SAPLING.get());
     }
 
     private void simpleItem(Item item) {
@@ -43,5 +45,11 @@ public class ItemModelGenerator extends ItemModelProvider {
 
     private void doorBlockItem(DoorBlock door) {
         simpleItem(door.asItem());
+    }
+
+    private void saplingBlockItem(SaplingBlock block) {
+        String name = block.getRegistryName().getPath();
+        withExistingParent(name, mcLoc("item/generated"))
+                .texture("layer0", modLoc("block/" + name));
     }
 }

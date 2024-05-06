@@ -3,10 +3,12 @@ package fr.silenthill99.kaupen_mod;
 import com.google.common.collect.ImmutableMap;
 import fr.silenthill99.kaupen_mod.init.ModBlocks;
 import fr.silenthill99.kaupen_mod.init.ModItems;
+import fr.silenthill99.kaupen_mod.world.gen.ModConfigureFeatures;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.AxeItem;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -33,6 +35,9 @@ public class Main {
                     .build();
 
         });
+
+        ModConfigureFeatures features = new ModConfigureFeatures();
+        MinecraftForge.EVENT_BUS.register(features);
     }
 
     private void clientSetup(FMLClientSetupEvent event) {
@@ -40,6 +45,8 @@ public class Main {
             RenderTypeLookup.setRenderLayer(ModBlocks.AMETHYST_DOOR.get(), RenderType.cutout());
             RenderTypeLookup.setRenderLayer(ModBlocks.AMETHYST_TRAPDOOR.get(), RenderType.cutout());
             RenderTypeLookup.setRenderLayer(ModBlocks.OATS.get(), RenderType.cutout());
+            RenderTypeLookup.setRenderLayer(ModBlocks.REDWOOD_LEAVES.get(), RenderType.cutout());
+            RenderTypeLookup.setRenderLayer(ModBlocks.REDWOOD_SAPLING.get(), RenderType.cutout());
         });
     }
 }

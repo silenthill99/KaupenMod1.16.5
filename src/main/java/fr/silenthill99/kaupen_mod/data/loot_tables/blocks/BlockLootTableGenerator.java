@@ -39,6 +39,9 @@ public class BlockLootTableGenerator extends BlockLootTables {
         dropSelf(ModBlocks.STRIPPED_REDWOOD_LOG.get());
         dropSelf(ModBlocks.STRIPPED_REDWOOD_WOOD.get());
         dropSelf(ModBlocks.REDWOOD_PLANKS.get());
+
+        add(ModBlocks.REDWOOD_LEAVES.get(), block -> createLeavesDrops(block, ModBlocks.REDWOOD_SAPLING.get()));
+        dropSelf(ModBlocks.REDWOOD_SAPLING.get());
     }
 
     @Override

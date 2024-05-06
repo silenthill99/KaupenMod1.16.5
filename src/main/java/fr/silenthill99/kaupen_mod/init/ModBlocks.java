@@ -3,6 +3,7 @@ package fr.silenthill99.kaupen_mod.init;
 import fr.silenthill99.kaupen_mod.Main;
 import fr.silenthill99.kaupen_mod.custom.blocks.FirestoneBlock;
 import fr.silenthill99.kaupen_mod.custom.blocks.crops.OatsBlock;
+import fr.silenthill99.kaupen_mod.custom.trees.RedwoodTree;
 import fr.silenthill99.kaupen_mod.utils.ModItemGroups;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
@@ -76,6 +77,13 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> REDWOOD_PLANKS = createBlock("redwood_planks",
             () -> new Block(AbstractBlock.Properties.copy(Blocks.OAK_PLANKS)));
+
+    public static final RegistryObject<Block> REDWOOD_LEAVES = createBlock("redwood_leaves",
+            () -> new LeavesBlock(AbstractBlock.Properties.of(Material.LEAVES).strength(0.2f).randomTicks()
+                    .sound(SoundType.GRASS).noOcclusion()));
+
+    public static final RegistryObject<Block> REDWOOD_SAPLING = createBlock("redwood_sapling",
+            () -> new SaplingBlock(new RedwoodTree(), AbstractBlock.Properties.copy(Blocks.OAK_LEAVES)));
 
 
     private static <T extends Block> RegistryObject<T> createBlock(String name, Supplier<T> supplier) {

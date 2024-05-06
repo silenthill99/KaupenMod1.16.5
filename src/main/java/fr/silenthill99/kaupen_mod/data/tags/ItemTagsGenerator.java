@@ -23,6 +23,14 @@ public class ItemTagsGenerator extends ItemTagsProvider {
                 ModItems.AMETHYST.get()
         );
 
+        tag(ItemTags.LEAVES).add(
+                ModBlocks.REDWOOD_LEAVES.get().asItem()
+        );
+
+        tag(ItemTags.LOGS).add(
+                ModBlocks.REDWOOD_LOG.get().asItem()
+        );
+
         tag(ItemTags.PLANKS).add(
                 ModBlocks.REDWOOD_PLANKS.get().asItem()
         );

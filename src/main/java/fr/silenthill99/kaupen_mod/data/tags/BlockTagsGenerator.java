@@ -29,5 +29,14 @@ public class BlockTagsGenerator extends BlockTagsProvider {
         tag(BlockTags.FENCE_GATES).add(
                 ModBlocks.AMETHYST_FENCE_GATE.get()
         );
+        tag(BlockTags.LEAVES).add(
+                ModBlocks.REDWOOD_LEAVES.get()
+        );
+        tag(BlockTags.LOGS).add(
+                ModBlocks.REDWOOD_LOG.get()
+        );
+        tag(BlockTags.PLANKS).add(
+                ModBlocks.REDWOOD_PLANKS.get()
+        );
     }
 }
