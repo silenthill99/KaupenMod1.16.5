@@ -15,6 +15,9 @@ public class ModTags {
         public static final Tags.IOptionalNamedTag<Block> FIRESTONE_CLICKABLE_BLOCKS =
                 createTag("firestone_clickable_blocks");
 
+        public static final Tags.IOptionalNamedTag<Block> REDWOOD_LOGS =
+                createTag("redwood_logs");
+
         private static Tags.IOptionalNamedTag<Block> createTag(String name) {
             return BlockTags.createOptional(new ResourceLocation(Main.MODID, name));
         }
@@ -28,6 +31,8 @@ public class ModTags {
     public static class ModItemTags {
 
         public static final Tags.IOptionalNamedTag<Item> AMETHYST = createForgeTag("gems/amethyst");
+
+        public static final Tags.IOptionalNamedTag<Item> REDWOOD_LOGS = createTag("redwood_logs");
 
         private static Tags.IOptionalNamedTag<Item> createTag(String name) {
             return ItemTags.createOptional(new ResourceLocation(Main.MODID, name));

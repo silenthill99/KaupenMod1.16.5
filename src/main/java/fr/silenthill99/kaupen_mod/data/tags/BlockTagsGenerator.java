@@ -38,5 +38,11 @@ public class BlockTagsGenerator extends BlockTagsProvider {
         tag(BlockTags.PLANKS).add(
                 ModBlocks.REDWOOD_PLANKS.get()
         );
+        tag(ModTags.ModBlockTags.REDWOOD_LOGS).add(
+                ModBlocks.REDWOOD_LOG.get(),
+                ModBlocks.REDWOOD_WOOD.get(),
+                ModBlocks.STRIPPED_REDWOOD_LOG.get(),
+                ModBlocks.STRIPPED_REDWOOD_WOOD.get()
+        );
     }
 }

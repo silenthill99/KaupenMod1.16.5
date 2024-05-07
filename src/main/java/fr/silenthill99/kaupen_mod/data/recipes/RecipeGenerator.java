@@ -7,7 +7,6 @@ import fr.silenthill99.kaupen_mod.utils.ModTags;
 import net.minecraft.advancements.criterion.InventoryChangeTrigger;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.*;
-import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.ResourceLocation;
 
@@ -52,5 +51,27 @@ public class RecipeGenerator extends RecipeProvider {
                 0.1f, 200)
                 .unlockedBy("unlock", InventoryChangeTrigger.Instance.hasItems(ModBlocks.AMETHYST_ORE.get()))
                 .save(consumer, new ResourceLocation(Main.MODID, "amethyst_from_smelting"));
+
+        ShapedRecipeBuilder.shaped(ModBlocks.REDWOOD_WOOD.get(), 3)
+                .group("bark")
+                .pattern("00")
+                .pattern("00")
+                .define('0', ModBlocks.REDWOOD_LOG.get())
+                .unlockedBy("unlock", InventoryChangeTrigger.Instance.hasItems(ModBlocks.REDWOOD_LOG.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(ModBlocks.STRIPPED_REDWOOD_WOOD.get(), 3)
+                .group("bark")
+                .pattern("00")
+                .pattern("00")
+                .define('0', ModBlocks.STRIPPED_REDWOOD_LOG.get())
+                .unlockedBy("unlock", InventoryChangeTrigger.Instance.hasItems(ModBlocks.STRIPPED_REDWOOD_LOG.get()))
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(ModBlocks.REDWOOD_PLANKS.get(), 4)
+                .group("planks")
+                .requires(ModTags.ModItemTags.REDWOOD_LOGS)
+                .unlockedBy("unlock", has(ModTags.ModItemTags.REDWOOD_LOGS))
+                .save(consumer);
     }
 }

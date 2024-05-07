@@ -34,5 +34,12 @@ public class ItemTagsGenerator extends ItemTagsProvider {
         tag(ItemTags.PLANKS).add(
                 ModBlocks.REDWOOD_PLANKS.get().asItem()
         );
+
+        tag(ModTags.ModItemTags.REDWOOD_LOGS).add(
+                ModBlocks.REDWOOD_LOG.get().asItem(),
+                ModBlocks.REDWOOD_WOOD.get().asItem(),
+                ModBlocks.STRIPPED_REDWOOD_LOG.get().asItem(),
+                ModBlocks.STRIPPED_REDWOOD_WOOD.get().asItem()
+        );
     }
 }

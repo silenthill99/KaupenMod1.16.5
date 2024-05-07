@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "kaupen_mod:redwood_wood"
+    ]
+  },
+  "criteria": {
+    "unlock": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "kaupen_mod:redwood_log"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "kaupen_mod:redwood_wood"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "unlock",
+      "has_the_recipe"
+    ]
+  ]
+}

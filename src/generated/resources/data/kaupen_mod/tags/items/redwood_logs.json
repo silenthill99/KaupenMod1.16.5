@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "kaupen_mod:redwood_log",
+    "kaupen_mod:redwood_wood",
+    "kaupen_mod:stripped_redwood_log",
+    "kaupen_mod:stripped_redwood_wood"
+  ]
+}
