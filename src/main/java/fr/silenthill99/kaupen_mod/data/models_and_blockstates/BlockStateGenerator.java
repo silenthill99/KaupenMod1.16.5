@@ -42,7 +42,7 @@ public class BlockStateGenerator extends BlockStateProvider {
         axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_REDWOOD_WOOD.get(),
                 blockTexture(ModBlocks.STRIPPED_REDWOOD_LOG.get()), blockTexture(ModBlocks.STRIPPED_REDWOOD_LOG.get()));
         simpleBlock(ModBlocks.REDWOOD_PLANKS.get());
-        simpleBlock(ModBlocks.REDWOOD_LEAVES.get());
+        leavesBlock((LeavesBlock) ModBlocks.REDWOOD_LEAVES.get());
     }
 
     @Override
@@ -108,5 +108,11 @@ public class BlockStateGenerator extends BlockStateProvider {
         path = block.getRegistryName().getPath();
         super.logBlock(block);
         simpleBlockItem(block, new ModelFile.UncheckedModelFile(modLoc("block/" + path)));
+    }
+
+    private void leavesBlock(LeavesBlock block) {
+        path = block.getRegistryName().getPath();
+        simpleBlock(block);
+        simpleBlockItem(block, models().singleTexture(path, mcLoc("block/leaves"), "all", blockTexture(block)));
     }
 }
