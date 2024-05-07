@@ -66,4 +66,7 @@ public class ModItems {
                             .build()
             ).tab(ModItemGroups.TUTORIAL_GROUP.getGroup())));
 
+    public static final RegistryObject<Item> AMETHYST_HORSE_ARMOR = ITEMS.register("amethyst_horse_armor",
+            () -> new HorseArmorItem(9, "amethyst", new Item.Properties().tab(ModItemGroups.TUTORIAL_GROUP.getGroup())));
+
 }

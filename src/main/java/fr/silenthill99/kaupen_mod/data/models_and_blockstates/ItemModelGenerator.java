@@ -31,6 +31,7 @@ public class ItemModelGenerator extends ItemModelProvider {
         doorBlockItem((DoorBlock) ModBlocks.AMETHYST_DOOR.get());
         simpleItem(ModItems.OATS.get());
         saplingBlockItem((SaplingBlock) ModBlocks.REDWOOD_SAPLING.get());
+        simpleItem(ModItems.AMETHYST_HORSE_ARMOR.get());
     }
 
     private void simpleItem(Item item) {
