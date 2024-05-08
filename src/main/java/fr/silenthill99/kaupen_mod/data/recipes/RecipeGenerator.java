@@ -7,6 +7,7 @@ import fr.silenthill99.kaupen_mod.utils.ModTags;
 import net.minecraft.advancements.criterion.InventoryChangeTrigger;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.*;
+import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.ResourceLocation;
 
@@ -72,6 +73,56 @@ public class RecipeGenerator extends RecipeProvider {
                 .group("planks")
                 .requires(ModTags.ModItemTags.REDWOOD_LOGS)
                 .unlockedBy("unlock", has(ModTags.ModItemTags.REDWOOD_LOGS))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(ModItems.AMETHYST_PICKAXE.get())
+                .pattern("000")
+                .pattern(" 1 ")
+                .pattern(" 1 ")
+                .define('0', ModItems.AMETHYST.get())
+                .define('1', Items.STICK)
+                .unlockedBy("unlock", InventoryChangeTrigger.Instance.hasItems(ModItems.AMETHYST.get(),
+                        Items.STICK))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(ModItems.AMETHYST_AXE.get())
+                .pattern("00")
+                .pattern("01")
+                .pattern(" 1")
+                .define('0', ModItems.AMETHYST.get())
+                .define('1', Items.STICK)
+                .unlockedBy("unlock", InventoryChangeTrigger.Instance.hasItems(ModItems.AMETHYST.get(),
+                        Items.STICK))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(ModItems.AMETHYST_SWORD.get())
+                .pattern("0")
+                .pattern("0")
+                .pattern("1")
+                .define('0', ModItems.AMETHYST.get())
+                .define('1', Items.STICK)
+                .unlockedBy("unlock", InventoryChangeTrigger.Instance.hasItems(ModItems.AMETHYST.get(),
+                        Items.STICK))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(ModItems.AMETHYST_SHOVEL.get())
+                .pattern("0")
+                .pattern("1")
+                .pattern("1")
+                .define('0', ModItems.AMETHYST.get())
+                .define('1', Items.STICK)
+                .unlockedBy("unlock", InventoryChangeTrigger.Instance.hasItems(ModItems.AMETHYST.get(),
+                        Items.STICK))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(ModItems.AMETHYST_HOE.get())
+                .pattern("00")
+                .pattern(" 1")
+                .pattern(" 1")
+                .define('0', ModItems.AMETHYST.get())
+                .define('1', Items.STICK)
+                .unlockedBy("unlock", InventoryChangeTrigger.Instance.hasItems(ModItems.AMETHYST.get(),
+                        Items.STICK))
                 .save(consumer);
     }
 }

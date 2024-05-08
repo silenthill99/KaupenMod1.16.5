@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "00",
+    "01",
+    " 1"
+  ],
+  "key": {
+    "0": {
+      "item": "kaupen_mod:amethyst"
+    },
+    "1": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "kaupen_mod:amethyst_axe"
+  }
+}
