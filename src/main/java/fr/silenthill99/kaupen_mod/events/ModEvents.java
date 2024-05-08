@@ -1,6 +1,7 @@
 package fr.silenthill99.kaupen_mod.events;
 
 import fr.silenthill99.kaupen_mod.Main;
+import fr.silenthill99.kaupen_mod.utils.commands.HomeCommand;
 import fr.silenthill99.kaupen_mod.utils.commands.ReturnHomeCommand;
 import fr.silenthill99.kaupen_mod.utils.commands.SetHomeCommand;
 import net.minecraftforge.event.RegisterCommandsEvent;
@@ -16,6 +17,7 @@ public class ModEvents {
     public static void onCommandRegister(RegisterCommandsEvent event) {
         new SetHomeCommand(event.getDispatcher());
         new ReturnHomeCommand(event.getDispatcher());
+        new HomeCommand(event.getDispatcher());
 
         ConfigCommand.register(event.getDispatcher());
     }
