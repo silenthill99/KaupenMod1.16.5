@@ -1,4 +1,4 @@
-package fr.silenthill99.kaupen_mod.commands;
+package fr.silenthill99.kaupen_mod.utils.commands;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;

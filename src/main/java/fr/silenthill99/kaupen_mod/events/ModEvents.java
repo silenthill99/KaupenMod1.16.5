@@ -1,8 +1,8 @@
 package fr.silenthill99.kaupen_mod.events;
 
 import fr.silenthill99.kaupen_mod.Main;
-import fr.silenthill99.kaupen_mod.commands.ReturnHomeCommand;
-import fr.silenthill99.kaupen_mod.commands.SetHomeCommand;
+import fr.silenthill99.kaupen_mod.utils.commands.ReturnHomeCommand;
+import fr.silenthill99.kaupen_mod.utils.commands.SetHomeCommand;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
