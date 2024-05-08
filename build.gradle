@@ -12,6 +12,8 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
+compileJava.options.encoding = "utf-8"
+
 version = '1.0'
 group = 'fr.silenthill99.kaupen_mod' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'Kaupen Mod'
