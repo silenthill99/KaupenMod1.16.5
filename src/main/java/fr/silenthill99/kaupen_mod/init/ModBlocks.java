@@ -9,6 +9,7 @@ import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.potion.Effects;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -84,6 +85,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> REDWOOD_SAPLING = createBlock("redwood_sapling",
             () -> new SaplingBlock(new RedwoodTree(), AbstractBlock.Properties.copy(Blocks.OAK_LEAVES)));
+
+    public static final RegistryObject<Block> HYACINTH = createBlock("hyacinth",
+            () -> new FlowerBlock(Effects.DIG_SPEED, 2, AbstractBlock.Properties.copy(Blocks.DANDELION)));
 
 
     private static <T extends Block> RegistryObject<T> createBlock(String name, Supplier<T> supplier) {

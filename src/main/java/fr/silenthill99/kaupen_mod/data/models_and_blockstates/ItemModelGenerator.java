@@ -3,8 +3,8 @@ package fr.silenthill99.kaupen_mod.data.models_and_blockstates;
 import fr.silenthill99.kaupen_mod.Main;
 import fr.silenthill99.kaupen_mod.init.ModBlocks;
 import fr.silenthill99.kaupen_mod.init.ModItems;
+import net.minecraft.block.Block;
 import net.minecraft.block.DoorBlock;
-import net.minecraft.block.SaplingBlock;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
@@ -30,8 +30,9 @@ public class ItemModelGenerator extends ItemModelProvider {
         simpleItem(ModItems.AMETHYST_HELMET.get());
         doorBlockItem((DoorBlock) ModBlocks.AMETHYST_DOOR.get());
         simpleItem(ModItems.OATS.get());
-        saplingBlockItem((SaplingBlock) ModBlocks.REDWOOD_SAPLING.get());
+        crossBlockItem(ModBlocks.REDWOOD_SAPLING.get());
         simpleItem(ModItems.AMETHYST_HORSE_ARMOR.get());
+        cross(ModBlocks.HYACINTH.getId().getPath(), modLoc("block/" + ModBlocks.HYACINTH.getId().getPath()));
     }
 
     private void simpleItem(Item item) {
@@ -48,7 +49,7 @@ public class ItemModelGenerator extends ItemModelProvider {
         simpleItem(door.asItem());
     }
 
-    private void saplingBlockItem(SaplingBlock block) {
+    private void crossBlockItem(Block block) {
         String name = block.getRegistryName().getPath();
         withExistingParent(name, mcLoc("item/generated"))
                 .texture("layer0", modLoc("block/" + name));

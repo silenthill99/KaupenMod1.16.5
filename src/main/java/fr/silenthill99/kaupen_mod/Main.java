@@ -41,6 +41,7 @@ public class Main {
             RenderTypeLookup.setRenderLayer(ModBlocks.OATS.get(), RenderType.cutout());
             RenderTypeLookup.setRenderLayer(ModBlocks.REDWOOD_LEAVES.get(), RenderType.cutout());
             RenderTypeLookup.setRenderLayer(ModBlocks.REDWOOD_SAPLING.get(), RenderType.cutout());
+            RenderTypeLookup.setRenderLayer(ModBlocks.HYACINTH.get(), RenderType.cutout());
         });
     }
 }

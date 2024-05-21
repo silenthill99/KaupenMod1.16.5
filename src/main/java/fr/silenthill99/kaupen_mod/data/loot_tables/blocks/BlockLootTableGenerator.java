@@ -42,8 +42,10 @@ public class BlockLootTableGenerator extends BlockLootTables {
 
         add(ModBlocks.REDWOOD_LEAVES.get(), block -> createLeavesDrops(block, ModBlocks.REDWOOD_SAPLING.get()));
         dropSelf(ModBlocks.REDWOOD_SAPLING.get());
+        dropSelf(ModBlocks.HYACINTH.get());
     }
 
+    @SuppressWarnings("NullableProblems")
     @Override
     protected Iterable<Block> getKnownBlocks() {
         return ModBlocks.BLOCKS.getEntries()
