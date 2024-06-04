@@ -7,10 +7,15 @@ import net.minecraft.block.Block;
 import net.minecraft.block.DoorBlock;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
+@SuppressWarnings("DataFlowIssue")
 public class ItemModelGenerator extends ItemModelProvider {
+
+    private ResourceLocation path;
+
     public ItemModelGenerator(DataGenerator generator, ExistingFileHelper existingFileHelper) {
         super(generator, Main.MODID, existingFileHelper);
     }
@@ -36,13 +41,15 @@ public class ItemModelGenerator extends ItemModelProvider {
     }
 
     private void simpleItem(Item item) {
-        String name = item.getRegistryName().getPath();
-        withExistingParent(name, mcLoc("item/generated")).texture("layer0", modLoc("item/" + name));
+        path = item.getRegistryName();
+        withExistingParent(path.getPath(), mcLoc("item/generated"))
+                .texture("layer0", modLoc("item/" + path.getPath()));
     }
 
     private void toolItem(Item item) {
-        String name = item.getRegistryName().getPath();
-        withExistingParent(name, mcLoc("item/handheld")).texture("layer0", modLoc("item/" + name));
+        path = item.getRegistryName();
+        withExistingParent(path.getPath(), mcLoc("item/handheld"))
+                .texture("layer0", modLoc("item/" + path.getPath()));
     }
 
     private void doorBlockItem(DoorBlock door) {
@@ -50,8 +57,8 @@ public class ItemModelGenerator extends ItemModelProvider {
     }
 
     private void crossBlockItem(Block block) {
-        String name = block.getRegistryName().getPath();
-        withExistingParent(name, mcLoc("item/generated"))
-                .texture("layer0", modLoc("block/" + name));
+        path = block.getRegistryName();
+        withExistingParent(path.getPath(), mcLoc("item/generated"))
+                .texture("layer0", modLoc("block/" + path.getPath()));
     }
 }
