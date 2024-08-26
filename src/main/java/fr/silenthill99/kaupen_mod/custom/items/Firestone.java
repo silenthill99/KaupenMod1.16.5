@@ -3,7 +3,6 @@ package fr.silenthill99.kaupen_mod.custom.items;
 import fr.silenthill99.kaupen_mod.utils.ModTags;
 import net.minecraft.block.AbstractFireBlock;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
@@ -21,7 +20,6 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
-import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Objects;
 
@@ -46,7 +44,7 @@ public class Firestone extends Item  {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag FlagIn) {
+    public void appendHoverText(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag FlagIn) {
 
         if (Screen.hasShiftDown()) {
             tooltip.add(new TranslationTextComponent("tooltip.kaupen_mod.firestone_shift"));
